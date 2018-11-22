@@ -8,7 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { BaseComponent } from './base/base.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { WeatherComponent } from './weather/weather.component';
-
+import { OpenWeatherService } from "./services/open-weather.service";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +22,13 @@ import { WeatherComponent } from './weather/weather.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    OpenWeatherService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
